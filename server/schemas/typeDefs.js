@@ -6,6 +6,11 @@ const typeDefs = gql`
     name: String
   }
 
+  type ProductTag {
+    _id: ID
+    tagName: String
+  }
+
   type Product {
     _id: ID
     name: String
@@ -14,6 +19,7 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     category: Category
+    productTag: ProductTag
   }
 
   type Order {
@@ -41,6 +47,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
+    productTag: [ProductTag]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User

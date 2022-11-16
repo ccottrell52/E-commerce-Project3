@@ -12,6 +12,9 @@ export const QUERY_PRODUCTS = gql`
       category {
         _id
       }
+      productTag {
+        _id
+      }
     }
   }
 `;
@@ -47,6 +50,15 @@ export const QUERY_CATEGORIES = gql`
     }
   }
 `;
+
+export const QUERY_PRODUCTTAGS = gql`
+  {
+    productTag {
+      _id
+      name
+    }
+  }
+`
 
 export const QUERY_USER = gql`
   {
