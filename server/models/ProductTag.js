@@ -10,6 +10,6 @@ const productTagSchema = new Schema({
   });
   
 
-const ProductTag = mongoose.model('Category', productTagSchema);
+const ProductTag = mongoose.model('ProductTag', productTagSchema);
 
 module.exports = ProductTag;
