@@ -92,7 +92,7 @@ Go the extra mile and write tests for your application. Then provide examples on
   
   
     Colton Vincent
-  <p align="left">Linkedin: <a href="#https://www.linkedin.com/in/courage-cottrell-b44172161/">Colton Vicent</a></p>
+  <p align="left">Linkedin: <a href="#https://www.linkedin.com/in/colton-vincent-b44172161/">Colton Vincent</a></p>
   <p align="left">Github: <a href="#https://github.com/ColtonVincent">ColtonVincent</a></p>
   <p align="left">Email: <a href="#Cvinny33@gmail.com">Cvinny33@gmail.com</a></p>
     
@@ -107,7 +107,7 @@ Go the extra mile and write tests for your application. Then provide examples on
   <p align="left">Email: <a href="#nickgosh420@gmail.com">nickgosh420@gmail.com</a></p>
   
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  
+  yay
   
   ## Questions
   
