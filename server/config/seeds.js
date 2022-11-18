@@ -97,19 +97,19 @@ db.once('open', async () => {
       quantity: 1
     },
     {
-      name: '',
+      name: 'aaa',
       category: categories[2]._id,
       description:
-        '',
+        'abababa',
       image: 'plastic-horses.jpg',
       price: 2.99,
       quantity: 1000
     },
     {
-      name: '',
+      name: 'aaaa',
       category: categories[2]._id,
       description:
-        '',
+        'abbbaba',
       image: 'teddy-bear.jpg',
       price: 7.99,
       quantity: 100
@@ -120,7 +120,7 @@ db.once('open', async () => {
       description:
         'Autographed pair of Eric Sayers least favorite game worn shoes',
       image: 'alphabet-blocks.jpg',
-      price: 'Priceless',
+      price: 20.00,
       quantity: 1
     }
   ]);
