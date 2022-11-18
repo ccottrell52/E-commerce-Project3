@@ -3,7 +3,7 @@ const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
-  const 
+  
   const categories = await Category.insertMany([
     { name: 'T-Shirt' },
     { name: 'Sweat Shirt' },
@@ -35,7 +35,7 @@ db.once('open', async () => {
       price: 20.00,
       quantity: 5
     },
-    {t
+    {
       name: 'Sarah Rohr T-Shirt',
       category: categories[0]._id,
       description:
@@ -48,7 +48,7 @@ db.once('open', async () => {
       name: 'Jacob Dolph T-Shirt',
       category: categories[0]._id,
       description:
-        'T-Shirt with a picture of Jacob Dolphs face on it'
+        'T-Shirt with a picture of Jacob Dolphs face on it',
       price: 20.00,
       quantity: 5
     },
@@ -56,7 +56,7 @@ db.once('open', async () => {
       name: 'Taylor T-Shirt',
       category: categories[0]._id,
       description:
-        'T-Shirt with a picture of Taylors face pn it',
+        'T-Shirt with a picture of Taylors face on it',
       image: 'wooden-spoons.jpg',
       price: 20.00,
       quantity: 5
