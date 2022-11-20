@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { ADD_TO_WISHLIST, ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
@@ -20,6 +20,7 @@ function ProductItem(item) {
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    console.log(itemInCart)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -39,6 +40,21 @@ function ProductItem(item) {
     }
   }
 
+  // const { wishlist } = state;
+
+  const addToWishList = ()=>{
+    // const iteminList = wishlist.find((listItem)=> listItem._id === _id)
+    console.log("added item to wishlist");
+    // console.log(iteminList);
+   
+      dispatch({
+        type: ADD_TO_WISHLIST,
+        product: { ...item } 
+      });
+      // idbPromise('wishlist', 'put', { ...item })
+      console.log(state)
+  }
+
   return (
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
@@ -52,7 +68,8 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToWishList}>Add to Wish List</button>
+      <button onClick={addToCart}>Add to Cart</button>
     </div>
   );
 }
