@@ -1,19 +1,22 @@
 import React from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_TO_WISHLIST } from "../../utils/mutations";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_WISHLIST, ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-
+  const [addItem, { error }] = useMutation(ADD_TO_WISHLIST);
   const {
     image,
     name,
     _id,
     price,
-    quantity
+    quantity,
+    category
   } = item;
 
   const { cart } = state
@@ -40,20 +43,20 @@ function ProductItem(item) {
     }
   }
 
-  // const { wishlist } = state;
+  const addToWishList = async ()=>{
 
-  const addToWishList = ()=>{
-    // const iteminList = wishlist.find((listItem)=> listItem._id === _id)
-    console.log("added item to wishlist");
-    // console.log(iteminList);
-   
-      dispatch({
-        type: ADD_TO_WISHLIST,
-        product: { ...item } 
-      });
-      // idbPromise('wishlist', 'put', { ...item })
-      console.log(state)
-  }
+    try {
+      const { data } = await addItem({
+        variables: {
+          name,
+          price,
+          category
+        },
+      })
+    } catch ( error ){
+      console.error(error);
+    }
+  };
 
   return (
     <div className="card px-1 py-1">

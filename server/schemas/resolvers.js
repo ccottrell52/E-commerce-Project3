@@ -87,7 +87,14 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }
+    },
+    wishlist: async (parent, args, context) =>{
+      console.log(context.user)
+      if (context.user){
+        return User.findById({_id: context.user._id}).populate('wishlist');
+      }
+      throw new AuthenticationError('You need to loged in (wishlist resolvers line 96)');
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -136,7 +143,31 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
+    addToWishList: async (parent, { name, price, category }, context)=>{
+      console.log('trying to addToWishList');
+      // console.log(context)
+      console.log(name, price, category);
+
+      if (context.user){
+        console.log('adding to wishlist(check args)');
+       return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { 
+            wishlist: {
+              name, 
+              price,
+              category
+            }
+           }},
+          { 
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!(resolvers.js line 155)');
+    },
   }
 };
 
