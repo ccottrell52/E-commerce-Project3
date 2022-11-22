@@ -49,21 +49,3 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-export const ADD_TO_WISHLIST = gql `
-  mutation addToWishList ($name: String!, $price: Float!, $category: String! ){
-    addToWishList(name: $name, price: $price, category: $category){
-      _id
-      firstName
-      lastName
-      email
-      wishlist {
-        name
-        price
-        category {
-          _id
-        }
-      }
-    }
-  }
-`;

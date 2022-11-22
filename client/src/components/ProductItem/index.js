@@ -1,6 +1,4 @@
 import React from "react";
-import { useMutation } from "@apollo/client";
-import { ADD_TO_WISHLIST } from "../../utils/mutations";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
@@ -9,21 +7,19 @@ import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-  const [addItem, { error }] = useMutation(ADD_TO_WISHLIST);
+
   const {
     image,
     name,
     _id,
     price,
-    quantity,
-    category
+    quantity
   } = item;
 
   const { cart } = state
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
-    console.log(itemInCart)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -43,21 +39,6 @@ function ProductItem(item) {
     }
   }
 
-  const addToWishList = async ()=>{
-
-    try {
-      const { data } = await addItem({
-        variables: {
-          name,
-          price,
-          category
-        },
-      })
-    } catch ( error ){
-      console.error(error);
-    }
-  };
-
   return (
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
@@ -71,8 +52,7 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
-      <button onClick={addToWishList}>Add to Wish List</button>
-      <button onClick={addToCart}>Add to Cart</button>
+      <button onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

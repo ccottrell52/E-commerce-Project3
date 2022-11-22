@@ -80,23 +80,3 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
-// Could be a problem
-export const QUERY_WISHLIST = gql`
-  query wishlist {
-    wishlist {
-      _id
-      firstName
-      lastName
-      email
-      wishlist {
-        _id
-        name
-        description
-        price
-        quantity
-        image
-      }
-    }
-  }
-`;
