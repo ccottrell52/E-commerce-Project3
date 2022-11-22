@@ -21,7 +21,7 @@ db.once('open', async () => {
       name: 'Jonathan Bejarano T-Shirt',
       description:
         'T-Shirt with a picture of Jonathan Bejaranos face on it.',
-      image: 'Jonathan.png',
+      image: 'cookie-tin.jpg',
       category: categories[0]._id,
       price: 20.00,
       quantity: 5
@@ -40,7 +40,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'T-Shirt with a picture of Sarah Rohrs face on it.',
-      image: 'Sarah.png',
+      image: 'toilet-paper.jpg',
       price: 20.00,
       quantity: 5
     },
@@ -49,7 +49,6 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'T-Shirt with a picture of Jacob Dolphs face on it',
-      image: 'Jacob.png',
       price: 20.00,
       quantity: 5
     },
@@ -67,7 +66,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'T-Shirt with Sean Kings face on it',
-      image: 'Sean.png',
+      image: 'camera.jpg',
       price: 20.00,
       quantity: 5
     },
