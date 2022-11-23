@@ -1,7 +1,6 @@
 import { useReducer } from "react";
 import {
   UPDATE_PRODUCTS,
-  ADD_TO_WISHLIST,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
@@ -25,12 +24,6 @@ export const reducer = (state, action) => {
         ...state,
         cartOpen: true,
         cart: [...state.cart, action.product],
-      };
-
-    case ADD_TO_WISHLIST:
-      return {
-        ...state,
-        wishlist: [...state.wishlist, action.product],
       };
 
     case ADD_MULTIPLE_TO_CART:

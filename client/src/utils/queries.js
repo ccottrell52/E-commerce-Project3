@@ -81,7 +81,6 @@ export const QUERY_USER = gql`
   }
 `;
 
-// Could be a problem
 export const QUERY_WISHLIST = gql`
   query wishlist {
     wishlist {

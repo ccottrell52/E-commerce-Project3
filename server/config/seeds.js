@@ -30,7 +30,7 @@ db.once('open', async () => {
       name: 'Eric Sayer T-shirt',
       description:
         'T-Shirt with a picture of Eric Sayers face on it.',
-      image: 'canned-coffee.jpg',
+      image: '',
       category: categories[0]._id,
       price: 20.00,
       quantity: 5
@@ -58,7 +58,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'T-Shirt with a picture of Taylors face on it',
-      image: 'wooden-spoons.jpg',
+      image: '',
       price: 20.00,
       quantity: 5
     },
@@ -76,7 +76,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Black Hoodie With an I followed by a heart emoji followed by the word coding',
-      image: 'tablet.jpg',
+      image: '',
       price: 20.00,
       quantity: 5
     },
@@ -85,7 +85,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'I am your Coder Vader style hoodie',
-      image: 'bedtime-book.jpg',
+      image: '',
       price: 40.00,
       quantity: 5
     },
@@ -93,34 +93,16 @@ db.once('open', async () => {
       name: 'Eric Sayers Backround Dog',
       category: categories[4]._id,
       description: 'The dog in the backround of Eric Sayers zoom.',
-      image: 'spinning-top.jpg',
+      image: '',
       price: 80.00,
       quantity: 1
-    },
-    {
-      name: 'aaa',
-      category: categories[2]._id,
-      description:
-        'abababa',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
-    },
-    {
-      name: 'aaaa',
-      category: categories[2]._id,
-      description:
-        'abbbaba',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
     },
     {
       name: 'Autographed Eric Sayer Shoes',
       category: categories[3]._id,
       description:
         'Autographed pair of Eric Sayers least favorite game worn shoes',
-      image: 'alphabet-blocks.jpg',
+      image: '',
       price: 20.00,
       quantity: 1
     }
