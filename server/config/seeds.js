@@ -30,7 +30,7 @@ db.once('open', async () => {
       name: 'Eric Sayer T-shirt',
       description:
         'T-Shirt with a picture of Eric Sayers face on it.',
-      image: 'canned-coffee.jpg',
+      image: '',
       category: categories[0]._id,
       price: 20.00,
       quantity: 5
@@ -98,28 +98,11 @@ db.once('open', async () => {
       quantity: 1
     },
     {
-      name: 'aaa',
-      category: categories[2]._id,
-      description:
-        'abababa',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
-    },
-    {
-      name: 'aaaa',
-      category: categories[2]._id,
-      description:
-        'abbbaba',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
-    },
-    {
       name: 'Autographed Eric Sayer Shoes',
       category: categories[3]._id,
       description:
         'Autographed pair of Eric Sayers least favorite game worn shoes',
+
       image: 'SignedShoes.png',
       price: 20.00,
       quantity: 1

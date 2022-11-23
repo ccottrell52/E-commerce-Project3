@@ -93,7 +93,7 @@ const resolvers = {
       if (context.user){
         return User.findById({_id: context.user._id}).populate('wishlist');
       }
-      throw new AuthenticationError('You need to loged in (wishlist resolvers line 96)');
+      throw new AuthenticationError('You need to loged in');
     },
   },
   Mutation: {
@@ -166,7 +166,7 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError('You need to be logged in!(resolvers.js line 155)');
+      throw new AuthenticationError('You need to be logged in!');
     },
   }
 };
