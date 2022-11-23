@@ -9,7 +9,7 @@ import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-  const [addItem, { error }] = useMutation(ADD_TO_WISHLIST);
+  const [addItem] = useMutation(ADD_TO_WISHLIST);
   const {
     image,
     name,
