@@ -26,7 +26,7 @@
 
  ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Our motivation was to build a fast responding E-commerce site that a user could add items to a wishlist or to their cart. If the user adds items to their wishlist it would be stored to that user and no matter what device the user is on they will still have the wishlist. Once the user signsup and logins than they will be able to add to their cart and checkout.
 
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
@@ -50,6 +50,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Deployed Site
+
+(Heroku link)[https://erics-emporium.herokuapp.com/]
   
 ## Credits
 
