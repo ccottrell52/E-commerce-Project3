@@ -44,7 +44,6 @@ function ProductItem(item) {
   }
 
   const addToWishList = async ()=>{
-
     try {
       const { data } = await addItem({
         variables: {
