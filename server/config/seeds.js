@@ -58,7 +58,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'T-Shirt with a picture of Taylors face on it',
-      image: '',
+      image: 'Taylor.png',
       price: 20.00,
       quantity: 5
     },
@@ -76,16 +76,16 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Black Hoodie With an I followed by a heart emoji followed by the word coding',
-      image: '',
+      image: 'Coding.png',
       price: 20.00,
       quantity: 5
     },
     {
-      name: 'I am Your Coder Hoodie',
-      category: categories[1]._id,
+      name: 'I am Your Coder T-Shirt',
+      category: categories[0]._id,
       description:
         'I am your Coder Vader style hoodie',
-      image: '',
+      image: 'Jonathan1.png',
       price: 40.00,
       quantity: 5
     },
@@ -93,7 +93,7 @@ db.once('open', async () => {
       name: 'Eric Sayers Backround Dog',
       category: categories[4]._id,
       description: 'The dog in the backround of Eric Sayers zoom.',
-      image: '',
+      image: 'dog.png',
       price: 80.00,
       quantity: 1
     },
@@ -102,7 +102,8 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'Autographed pair of Eric Sayers least favorite game worn shoes',
-      image: '',
+
+      image: 'SignedShoes.png',
       price: 20.00,
       quantity: 1
     }
