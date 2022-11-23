@@ -88,10 +88,10 @@ const resolvers = {
 
       return { session: session.id };
     },
-    wishlist: async (parent, args, context) =>{
+    wishlist: async (parent, args, context) => {
       console.log(context.user)
-      if (context.user){
-        return User.findById({_id: context.user._id}).populate('wishlist');
+      if (context.user) {
+        return User.findById({ _id: context.user._id }).populate('wishlist');
       }
       throw new AuthenticationError('You need to loged in');
     },
@@ -144,23 +144,23 @@ const resolvers = {
 
       return { token, user };
     },
-    addToWishList: async (parent, { name, price, category }, context)=>{
-      console.log('trying to addToWishList');
-      // console.log(context)
-      console.log(name, price, category);
+    addToWishList: async (parent, { name, description, price, image, category }, context) => {
 
-      if (context.user){
-        console.log('adding to wishlist(check args)');
-       return await User.findOneAndUpdate(
+      if (context.user) {
+        return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { 
-            wishlist: {
-              name, 
-              price,
-              category
+          {
+            $addToSet: {
+              wishlist: {
+                name,
+                description,
+                price,
+                image,
+                category
+              }
             }
-           }},
-          { 
+          },
+          {
             new: true,
             runValidators: true,
           }
@@ -168,6 +168,27 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    removeFromWishList: async (parent, { name }, context) => {
+      console.log('trying to remove item from wishlist')
+      console.log(context.user);
+      console.log(name);
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            $pull: {
+              wishlist: {
+                name
+              }
+            }
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        )
+      }
+    }
   }
 };
 

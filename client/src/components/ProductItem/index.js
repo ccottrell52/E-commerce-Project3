@@ -11,15 +11,16 @@ function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
   const [addItem] = useMutation(ADD_TO_WISHLIST);
   const {
-    image,
-    name,
     _id,
+    name,
+    description,
     price,
+    image,
     quantity,
     category
   } = item;
 
-  const { cart } = state
+  const { cart } = state;
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
@@ -41,14 +42,16 @@ function ProductItem(item) {
       });
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
-  }
+  };
 
   const addToWishList = async ()=>{
     try {
       const { data } = await addItem({
         variables: {
           name,
+          description,
           price,
+          image,
           category
         },
       })

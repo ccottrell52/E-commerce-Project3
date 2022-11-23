@@ -51,18 +51,34 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TO_WISHLIST = gql `
-  mutation addToWishList ($name: String!, $price: Float!, $category: String! ){
-    addToWishList(name: $name, price: $price, category: $category){
+  mutation addToWishList ($name: String!, $description: String, $price: Float!, $image: String, $category: String!) {
+    addToWishList(name: $name, description: $description, price: $price, image: $image category: $category) {
       _id
       firstName
       lastName
       email
       wishlist {
         name
+        description
         price
+        image
         category {
           _id
         }
+      }
+    }
+  }
+`;
+
+export const REMOVE_FROM_WISHLIST = gql `
+  mutation removeFromWishList ($name: String!){
+    removeFromWishList(name: $name){
+      _id
+      firstName
+      lastName
+      email
+      wishlist {
+        name
       }
     }
   }
