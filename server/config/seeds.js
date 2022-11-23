@@ -30,7 +30,7 @@ db.once('open', async () => {
       name: 'Eric Sayer T-shirt',
       description:
         'T-Shirt with a picture of Eric Sayers face on it.',
-      image: '',
+      image: 'Eric.png',
       category: categories[0]._id,
       price: 20.00,
       quantity: 5
@@ -54,7 +54,7 @@ db.once('open', async () => {
       quantity: 5
     },
     {
-      name: 'Taylor T-Shirt',
+      name: 'Taylor Hakes T-Shirt',
       category: categories[0]._id,
       description:
         'T-Shirt with a picture of Taylors face on it',
@@ -72,6 +72,24 @@ db.once('open', async () => {
       quantity: 5
     },
     {
+      name: 'Phil Rose T-Shirt',
+    category: categories[0]._id,
+    description:
+      'T-Shirt with Phils face on it',
+    image: 'Phillip.png',
+    price: 20.00,
+    quantity: 5
+  },
+  {
+    name: 'I am Your Coder T-Shirt',
+    category: categories[0]._id,
+    description:
+      'I am your Coder Vader style hoodie',
+    image: 'IAmYourCoder.png',
+    price: 40.00,
+    quantity: 5
+  },  
+  {
       name: 'I Heart Coding Hoodie',
       category: categories[1]._id,
       description:
@@ -81,13 +99,14 @@ db.once('open', async () => {
       quantity: 5
     },
     {
-      name: 'I am Your Coder T-Shirt',
-      category: categories[0]._id,
+      name: 'Autographed Eric Sayer Shoes',
+      category: categories[3]._id,
       description:
-        'I am your Coder Vader style hoodie',
-      image: 'Jonathan1.png',
-      price: 40.00,
-      quantity: 5
+        'Autographed pair of Eric Sayers least favorite game worn shoes',
+
+      image: 'EricShoes.png',
+      price: 80.00,
+      quantity: 1
     },
     {
       name: 'Eric Sayers Backround Dog',
@@ -98,12 +117,12 @@ db.once('open', async () => {
       quantity: 1
     },
     {
-      name: 'Autographed Eric Sayer Shoes',
-      category: categories[3]._id,
+      name: 'Eric Sayer Halloween Poster',
+      category: categories[4]._id,
       description:
-        'Autographed pair of Eric Sayers least favorite game worn shoes',
+        'Poster of Eric Sayer on Halloween',
 
-      image: 'SignedShoes.png',
+      image: 'Eric-Halloween.png',
       price: 20.00,
       quantity: 1
     }
