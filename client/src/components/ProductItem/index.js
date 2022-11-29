@@ -2,7 +2,6 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_WISHLIST } from "../../utils/mutations";
 import { Link } from "react-router-dom";
-import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -16,7 +15,6 @@ function ProductItem(item) {
     description,
     price,
     image,
-    quantity,
     category
   } = item;
 
@@ -44,9 +42,9 @@ function ProductItem(item) {
     }
   };
 
-  const addToWishList = async ()=>{
+  const addToWishList = async () => {
     try {
-      const { data } = await addItem({
+      await addItem({
         variables: {
           name,
           description,
@@ -55,27 +53,32 @@ function ProductItem(item) {
           category
         },
       })
-    } catch ( error ){
+    } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
-        <img
-          alt={name}
-          src={`/images/${image}`}
-        />
-        <p>{name}</p>
+    <article className="product">
+
+      <Link className="noUnderline" to={`/products/${_id}`}>
+        <picture>
+          <img alt={name} src={`/images/${image}`} />
+        </picture>
       </Link>
-      <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+
+      <div className="product__content">
+        <h2 className="product__title">{name}</h2>
+        <p className='product__description'>{description}</p>
+
+        <div className="flex-group">
+          <p className="product__price"><span className="visually-hidden">Current price:</span>${price * .8 + ".99"}</p>
+          <p className="product__original-price"><span className="visually-hidden">Original price:</span><s>${price}.99</s></p>
+        </div>
+        <button className="button" onClick={addToWishList}>Add to Wish List</button>
+        <button className="button" onClick={addToCart}>Add to Cart</button>
       </div>
-      <button onClick={addToWishList}>Add to Wish List</button>
-      <button onClick={addToCart}>Add to Cart</button>
-    </div>
+    </article>
   );
 }
 

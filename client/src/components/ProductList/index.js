@@ -44,10 +44,10 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
+    <div className="">
       <h2>Our Products:</h2>
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="product__container">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
