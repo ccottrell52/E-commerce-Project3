@@ -7,52 +7,51 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">
+        <ul className="link-group">
+          <Link to="/orderHistory">
+            <li className="link">
               Order History
-            </Link>
-          </li>
-          <li>
-            <Link to="/wishlist">
+            </li>
+          </Link>
+          <Link to="/wishlist">
+            <li className="link">
               Wishlist
-            </Link>
-          </li>
-          <li className="mx-1">
-            <a href="/" onClick={() => Auth.logout()}>
+            </li>
+          </Link>
+          <Link to='/' onClick={() => Auth.logout()}>
+            <li className="link">
               Logout
-            </a>
-          </li>
+            </li>
+          </Link>
         </ul>
       );
     } else {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
+        <ul className="link-group">
+          <Link to="/signup">
+            <li className="link">
               Signup
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">
+            </li>
+          </Link>
+          <Link to="/login">
+            <li className="link">
               Login
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       );
     }
   }
 
   return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Eric's-Emporium
-        </Link>
-      </h1>
+    <header className="link-group">
+      <Link to="/">
+        <h1 className="link">
+          Eric's Emporium
+        </h1>
+      </Link>
 
-      <nav>
+      <nav className="">
         {showNavigation()}
       </nav>
     </header>

@@ -7,22 +7,24 @@ import WishListItem from '../components/WishListItem/index'
 const Wishlist = () => {
     const { data } = useQuery(QUERY_WISHLIST);
     const user = data?.wishlist?.wishlist || [];
-    console.log(user);
 
     return (
         <div className="container my-1">
-            <Link to="/">← Back to Products</Link>
+            <Link to="/" className="buttton">
+                <button className="button"> ← Back to Products</button>
+            </Link>
 
             <h2>Wishlist</h2>
             {user.length ? (
                 <>
                     {user.map((product) =>
                         <WishListItem
-                        _id={product._id}
-                        image={product.image}
-                        name={product.name}
-                        price={product.price}
-                        description={product.description}
+                            key={product._id}
+                            _id={product._id}
+                            image={product.image}
+                            name={product.name}
+                            price={product.price}
+                            description={product.description}
                         />
                     )}
                 </>

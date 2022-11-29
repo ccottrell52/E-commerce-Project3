@@ -145,7 +145,6 @@ const resolvers = {
       return { token, user };
     },
     addToWishList: async (parent, { name, description, price, image, category }, context) => {
-
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -169,9 +168,6 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     removeFromWishList: async (parent, { name }, context) => {
-      console.log('trying to remove item from wishlist')
-      console.log(context.user);
-      console.log(name);
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
