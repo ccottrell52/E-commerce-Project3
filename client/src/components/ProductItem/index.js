@@ -22,7 +22,6 @@ function ProductItem(item) {
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
-    console.log(itemInCart)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,

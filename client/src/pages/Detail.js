@@ -100,7 +100,9 @@ function Detail() {
 
   return (
     <>
-      <Link to="/">← Back to Products</Link>
+      <Link to="/" className="buttton">
+        <button className="button"> ← Back to Products</button>
+      </Link>
       {currentProduct && cart ? (
         <div className="product">
 
