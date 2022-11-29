@@ -44,10 +44,10 @@ function ProductList() {
   }
 
   return (
-    <div className="">
+    <div className="text-center">
       <h2>Our Products:</h2>
       {state.products.length ? (
-        <div className="product__container">
+        <div className="product__container d-flex justify-content-center">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

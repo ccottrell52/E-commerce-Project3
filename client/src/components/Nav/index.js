@@ -27,6 +27,7 @@ function Nav() {
       );
     } else {
       return (
+        
         <ul className="link-group">
           <Link to="/signup">
             <li className="link">
@@ -39,6 +40,7 @@ function Nav() {
             </li>
           </Link>
         </ul>
+        
       );
     }
   }
