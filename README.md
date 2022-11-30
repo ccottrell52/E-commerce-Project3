@@ -38,6 +38,10 @@ Run ``` npm start ``` to run the website.
 
 [deployed to Heroku](https://erics-emporium.herokuapp.com/)
 
+## Image of Deployed Site
+
+![Image of Deployed Site](./client/public/images/Eric's-Emporium.JPG)
+
 ## License
 
 This project is licensed under MIT.
