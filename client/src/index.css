@@ -148,7 +148,6 @@ body {
   cursor: pointer;
   text-decoration: none;
   list-style-type: none;
-  /* display: inline-flex; */
   gap: 0.5rem;
   justify-content: start;
   align-items: center;
@@ -222,4 +221,10 @@ body {
 
 .noUnderline{
   text-decoration: none;
+}
+
+.shopping__cart {
+  margin: 2rem;
+  padding: 1rem;
+  border-bottom: 4px solid var(--clr-primary-400);
 }
